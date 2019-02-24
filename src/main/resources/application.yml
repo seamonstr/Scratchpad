@@ -1,0 +1,19 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/springbootdb
+        username: postgres
+        password: postgres@123
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+
+
+
+# logging
+logging:
+    pattern:
+        console: %d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+    level:
+        org:
+            hibernate:
+                SQL: debug
