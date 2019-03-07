@@ -4,6 +4,15 @@ import javax.persistence.*;
 
 @Entity
 public class Bed {
+    private int id;
+    private String name;
+    private GardenLocation frontOrBack;
+
+    public Bed(int id, String name, GardenLocation frontOrBack) {
+        this.id = id;
+        this.name = name;
+        this.frontOrBack = frontOrBack;
+    }
 
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public int getId() {
@@ -34,12 +43,12 @@ public class Bed {
 
     @Override
     public String toString() {
-        return String.format("{'id': '%s', 'name': '%s', 'GardenLocation': '%s'}", id, name, frontOrBack);
+        return "Bed{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", frontOrBack=" + frontOrBack +
+                '}';
     }
-
-    private int id;
-    private String name;
-    private GardenLocation frontOrBack;
 
     public enum GardenLocation {
         front,

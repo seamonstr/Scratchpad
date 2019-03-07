@@ -4,7 +4,7 @@
 <persistence-unit name="garden">
 
     <description>
-      My first attempt at a pure JPA
+      My first attempt at a pure JPA app
     </description>
   <!--    <provider>org.hibernate.ejb.HibernatePersistence</provider>
       <jar-file>MyOrderApp.jar</jar-file> -->
@@ -18,12 +18,14 @@
       <property name="hibernate.connection.username" value="simongardener"/>
       <property name="hibernate.connection.password" value="frozenf3"/>
       <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/garden"/>
-
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
       <property name="hibernate.hbm2ddl.auto" value="create"/>
       <property name="hibernate.hbm2ddl.import_files" value="/import.sql"/>
-      <!--      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+      <property name="javax.persistence.schema-generation.scripts.create-target" value="db-schema.jpa.ddl" />
+      <property name="javax.persistence.schema-generation.scripts.drop-target" value="db-schema.jpa.ddl" />
+<!--
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost/rps"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
@@ -31,11 +33,11 @@
 
 
 
-      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-      <property name="javax.persistence.jdbc.url"
-                value="jdbc:postgresql://localhost:5432/garden" />
-      <property name="javax.persistence.jdbc.user" value="postgres" />
-      <property name="javax.persistence.jdbc.password" value="" /> -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:postgresql://localhost:5432/garden" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="" /> -->
     </properties>
   </persistence-unit>
 </persistence>

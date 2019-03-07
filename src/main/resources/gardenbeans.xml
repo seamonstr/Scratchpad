@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <!-- Flowerbeds -->
+  <bean id = "FrontByDoor" class = "org.redcabbage.garden.model.Bed">
+    <property name="id" value="1"/>
+    <property name="name" value="Front - by door"/>
+    <property name="frontOrBack" value="front" />
+  </bean>
+
+  <bean id = "BackLeft" class = "org.redcabbage.garden.model.Bed">
+    <property name="id" value="2"/>
+    <property name="name" value="Back - left"/>
+    <property name="frontOrBack" value="back" />
+  </bean>
+
+  <!-- Species -->
+  <bean id="geranium" class="org.redcabbage.garden.model.Species">
+    <property name="id" value="1"/>
+    <property name="name" value="Hardy geranium"/>
+  </bean>
+
+  <bean id="birch" class="org.redcabbage.garden.model.Species">
+    <property name="id" value="2"/>
+    <property name="name" value="Birch"/>
+  </bean>
+
+  <!-- Plants -->
+  <bean id="BigTree" class="org.redcabbage.garden.model.Plant">
+    <property name="id" value="1"/>
+    <property name="species" ref="birch"/>
+    <property name="bed" ref="BackLeft"/>
+  </bean>
+
+  <bean id="FrontLittleGeranium" class="org.redcabbage.garden.model.Plant">
+    <property name="id" value="2"/>
+    <property name="species" ref="geranium"/>
+    <property name="bed" ref="FrontByDoor"/>
+  </bean>
+</beans>

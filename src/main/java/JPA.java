@@ -19,9 +19,7 @@ public class JPA {
         fact = Persistence.createEntityManagerFactory("garden");
         em = fact.createEntityManager();
 
-        Bed b = new Bed();
-        b.setName("New Bed again!");
-        b.setFrontOrBack(back);
+        Bed b = new Bed(-1, "New Bed again!", back);
         saveInstance(b);
 
         Species s = new Species();
